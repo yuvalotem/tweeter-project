@@ -1,29 +1,29 @@
 const Tweeter = function () {
     let posts = [ //our posts array
-        {
-            text: "First post!",
-            id: "p1",
-            comments: [
-                { id: "c1", text: "First comment on first post!" },
-                { id: "c2", text: "Second comment on first post!!" },
-                { id: "c3", text: "Third comment on first post!!!" }
-            ]
-        },
-        {
-            text: "Aw man, I wanted to be first",
-            id: "p2",
-            comments: [
-                { id: "c4", text: "Don't wory second poster, you'll be first one day." },
-                { id: "c5", text: "Yeah, believe in yourself!" },
-                { id: "c6", text: "Haha second place what a joke." }
-            ]
-        }
+        // {
+        //     text: "First post!",
+        //     id: "p1",
+        //     comments: [
+        //         { id: "c1", text: "First comment on first post!" },
+        //         { id: "c2", text: "Second comment on first post!!" },
+        //         { id: "c3", text: "Third comment on first post!!!" }
+        //     ]
+        // },
+        // {
+        //     text: "Aw man, I wanted to be first",
+        //     id: "p2",
+        //     comments: [
+        //         { id: "c4", text: "Don't wory second poster, you'll be first one day." },
+        //         { id: "c5", text: "Yeah, believe in yourself!" },
+        //         { id: "c6", text: "Haha second place what a joke." }
+        //     ]
+        // }
     ]
-    let postIdCounter = 3 //count our post for id
-    let commentIdCounter = 7 //count our comments for id
+    let postIdCounter = 1 //count our post for id
+    let commentIdCounter = 1 //count our comments for id
     const getPosts = () => posts //returns our posts array
     const addPost = (txt) => { //gets text and add post 
-        posts.push({ text: txt, id: 'p' + postIdCounter, comments:[] })
+        posts.push({ text: txt, id: 'p' + postIdCounter, comments: [] })
         postIdCounter++
     }
     const removePost = (postID) => { //get post id and removes it
@@ -36,7 +36,7 @@ const Tweeter = function () {
     const addComment = function (postID, txt) { // get post id and text and comment the text on the post
         for (let i in posts) {
             if (posts[i].id == postID) {
-                posts[i].comments.push({id: "c" + commentIdCounter, text: txt })
+                posts[i].comments.push({ id: "c" + commentIdCounter, text: txt })
                 commentIdCounter++
             }
         }
